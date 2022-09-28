@@ -1,6 +1,5 @@
-const searchInput = document.getElementById('uniqueIDform')
 
-console.log(searchInput)
+
 const googleSearch = async (search) => {
    const rawData = await fetch(`http://localhost:3000/${search}`)
 
@@ -10,7 +9,8 @@ const googleSearch = async (search) => {
    return data
 }
 
-
-
-// googleSearch('dogs')
-
+function getInputValue(){
+    let searchInput = document.getElementById("myInput").value;
+    googleSearch(searchInput)
+  
+}
