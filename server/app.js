@@ -16,17 +16,25 @@ app.listen(port, () => {
 })
 
 
-app.get('/dogs', (req, res) => {
+app.get('/google', (req, res) => {
   const dogsData = Dog.all;
-  res.send(dogsData);
+ res.redirect('http://localhost:3000/results');
+
 });
 
+app.get('/results', (req, res) => {
+  const dogsData = Dog.all;
+  res.send(dogsData);
+})
 
-app.get('/dogs/random', (req, res) => {
+app.get('/google/random', (req, res) => {
     const dogRandom = Dog.random();
     res.send(dogRandom);
 });
 
+// app.get('/results', (req,res) => {
+//   res.sendFile(path.join(__dirname+'/results.html'));
+//  });
 
 app.get('/dogs/:id', (req, res) => {
   try {
