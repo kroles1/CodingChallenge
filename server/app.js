@@ -19,8 +19,8 @@ app.listen(port, () => {
 })
 
 
-app.get('/google', (req, res) => {
-  const dogsData = Dog.all;
+app.get('/google/dogs', (req, res) => {
+  // const dogsData = Dog.all;
  res.redirect('http://localhost:3000/results');
 
 });
