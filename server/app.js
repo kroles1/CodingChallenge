@@ -7,6 +7,9 @@ var cors = require('cors')
 
 app.use(cors())
 
+//register view engine
+app.set('view engine', 'ejs')
+
 app.get('/', (req, res) => {
   res.send('Hello Worldsds!')
 })
@@ -24,7 +27,9 @@ app.get('/google', (req, res) => {
 
 app.get('/results', (req, res) => {
   const dogsData = Dog.all;
-  res.send(dogsData);
+  // console.log(dogsData)
+  // res.send(dogsData);
+  res.render('results',{ dogs: dogsData})
 })
 
 app.get('/google/random', (req, res) => {
