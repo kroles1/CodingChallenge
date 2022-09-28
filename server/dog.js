@@ -12,6 +12,11 @@ class Dog {
         return dogs;
     }
 
+    static random() {
+        const random =  dogsData[Math.floor(Math.random()*5)]
+        return random
+     }
+
     static findById(id) {
             const dogData = dogsData.filter((dog) => dog.id === id)[0];
         if (!dogData){
@@ -20,6 +25,7 @@ class Dog {
         const dog = new Dog(dogData);
         return dog;
     }
+
 }
 
 

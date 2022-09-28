@@ -3,6 +3,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 const Dog = require('./dog')
+var cors = require('cors')
+
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('Hello Worldsds!')
@@ -18,6 +21,13 @@ app.get('/dogs', (req, res) => {
   res.send(dogsData);
 });
 
+
+app.get('/dogs/random', (req, res) => {
+    const dogRandom = Dog.random();
+    res.send(dogRandom);
+});
+
+
 app.get('/dogs/:id', (req, res) => {
   try {
       const dogId = parseInt(req.params.id);
@@ -28,3 +38,5 @@ app.get('/dogs/:id', (req, res) => {
       res.status(404).send(err);
   }
 });
+
+
