@@ -3,6 +3,7 @@ const dogsData = require('./data')
 class Dog {
     constructor(data) {
         this.id = data.id;
+        this.url = data.url;
         this.breed = data.breed;
         this.snippet = data.snippet;
         this.link = data.link;

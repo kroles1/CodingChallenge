@@ -45,4 +45,9 @@ h1 {
 
 #ulList {
     list-style-type: none;
+    margin: 10px;
+}
+
+.resultsStyle {
+    margin: 30px;
 }

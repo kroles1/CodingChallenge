@@ -70,7 +70,7 @@ function results(data){
     data.map((data) => {
         const li = document.createElement('li')
         // console.log(data.breed);
-        li.textContent = data.breed
+        li.textContent = data.url
         ul.appendChild(li)
 
         const li2 = document.createElement('a')
