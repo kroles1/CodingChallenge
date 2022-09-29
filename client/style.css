@@ -67,3 +67,15 @@ h1 {
 .randomNav {
     display: none;
 }
+
+.navbar {
+    border-bottom-style: solid;
+    border-bottom-color: #fff;
+    border-bottom-width: 2px;
+}
+
+.randomNav {
+    border-bottom-style: solid;
+    border-bottom-color: #fff;
+    border-bottom-width: 2px;
+}
