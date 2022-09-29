@@ -69,9 +69,19 @@ function results(data){
     ul.innerHTML = ""
     data.map((data) => {
         const li = document.createElement('li')
-        console.log(data.breed);
+        // console.log(data.breed);
         li.textContent = data.breed
         ul.appendChild(li)
+
+        const li2 = document.createElement('a')
+        li2.textContent = data.breed
+        li2.href = data.link
+        ul.appendChild(li2)
+
+        const li3 = document.createElement('p')
+        li3.textContent = data.snippet
+        ul.appendChild(li3)
+
     }
     )}
      
