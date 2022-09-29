@@ -15,5 +15,5 @@ const googleSearch = async (search) => {
 function getInputValue(){
     let searchInput = document.getElementById("myInput").value;
     googleSearch(searchInput).catch(err => console.log(err))
-  
+    window.location.replace('http://localhost:3000/google/' + myInput.value)
 }

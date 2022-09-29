@@ -1,4 +1,4 @@
-const { getRandomValues } = require('crypto')
+// const { getRandomValues } = require('crypto')
 const express = require('express')
 const app = express()
 const port = 3000
@@ -18,6 +18,10 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
+app.get('/google', (req, res) => {
+   const dogsData = Dog.all;
+   res.send(dogsData);
+});
 
 app.get('/google/dogs', (req, res) => {
   // const dogsData = Dog.all;
@@ -26,7 +30,7 @@ app.get('/google/dogs', (req, res) => {
 });
 
 app.get('/results', (req, res) => {
-  const dogsData = Dog.all;
+   const dogsData = Dog.all;
   // console.log(dogsData)
   // res.send(dogsData);
   res.render('results',{ dogs: dogsData})
@@ -41,7 +45,7 @@ app.get('/google/random', (req, res) => {
 //   res.sendFile(path.join(__dirname+'/results.html'));
 //  });
 
-app.get('/dogs/:id', (req, res) => {
+app.get('/google/dogs/:id', (req, res) => {
   try {
       const dogId = parseInt(req.params.id);
       const selectedDog = Dog.findById(dogId);
@@ -51,5 +55,6 @@ app.get('/dogs/:id', (req, res) => {
       res.status(404).send(err);
   }
 });
+
 
 
