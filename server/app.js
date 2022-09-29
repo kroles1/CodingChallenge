@@ -7,8 +7,6 @@ var cors = require('cors')
 
 app.use(cors())
 
-//register view engine
-app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
   res.send('Hello Worldsds!')
@@ -24,16 +22,16 @@ app.get('/google', (req, res) => {
 });
 
 app.get('/google/dogs', (req, res) => {
-  // const dogsData = Dog.all;
- res.redirect('http://localhost:3000/results');
+ const dogsData = Dog.all;
+  res.send(dogsData);
 
 });
 
 app.get('/results', (req, res) => {
    const dogsData = Dog.all;
   // console.log(dogsData)
-  // res.send(dogsData);
-  res.render('results',{ dogs: dogsData})
+  res.send(dogsData);
+  
 })
 
 app.get('/google/random', (req, res) => {
@@ -41,9 +39,6 @@ app.get('/google/random', (req, res) => {
     res.send(dogRandom);
 });
 
-// app.get('/results', (req,res) => {
-//   res.sendFile(path.join(__dirname+'/results.html'));
-//  });
 
 app.get('/google/dogs/:id', (req, res) => {
   try {
