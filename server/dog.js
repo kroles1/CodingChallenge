@@ -13,7 +13,7 @@ class Dog {
     }
 
     static random() {
-        const random =  dogsData[Math.floor(Math.random()*5)]
+        const random =  dogsData[Math.floor(Math.random()*10)]
         return random
      }
 
