@@ -1,3 +1,7 @@
+const luckyBtn = document.getElementById('getLuckyBtn')
+
+
+
 // const form = document.getElementById('form')
 
 // // form.addEventListener('submit', (e) => {
@@ -20,6 +24,23 @@ const googleSearch = async (search) => {
         results(data)
     }
 
+const luckyResult = async (e) => {
+    e.preventDefault()
+    const rawRandom = await fetch(`http://localhost:3000/google/random`)
+    const dataRandom = await rawRandom.json()
+    console.log(dataRandom);
+    randomResults(dataRandom)
+}
+
+luckyBtn.addEventListener('click', luckyResult)
+
+function randomResults(dataRandom){
+    const div = document.getElementById('lucky')
+    div.innerHTML = ""
+    const p = document.createElement('p')
+    p.textContent = dataRandom.breed
+    div.appendChild(p)
+}
 
 
 function getInputValue(){
@@ -37,4 +58,5 @@ function results(data){
         ul.appendChild(li)
     })}
      
+
 
