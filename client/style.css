@@ -51,3 +51,19 @@ h1 {
 .resultsStyle {
     margin: 30px;
 }
+
+.luckyResult {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+}
+
+.img {
+    margin: 30px;
+    width: 100px;
+    height: 150px;
+}
+
+.randomNav {
+    display: none;
+}

@@ -7,6 +7,7 @@ class Dog {
         this.breed = data.breed;
         this.snippet = data.snippet;
         this.link = data.link;
+        this.images = data.images;
     }
     static get all() {
         const dogs = dogsData.map( dog => new Dog(dog));
