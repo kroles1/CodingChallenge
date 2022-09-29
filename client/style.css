@@ -1,4 +1,6 @@
-body {
+.googleHome {
+    
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

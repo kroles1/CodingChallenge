@@ -10,6 +10,9 @@ const luckyBtn = document.getElementById('getLuckyBtn')
 
 
 const googleSearch = async (search) => {
+
+   const homePage = document.querySelector(".googleHome")
+   homePage.style.display = "none"
     // e.preventDefault()
     // console.log(e.target.search.value);
     
@@ -25,7 +28,11 @@ const googleSearch = async (search) => {
     }
 
 const luckyResult = async (e) => {
-    e.preventDefault()
+   e.preventDefault()
+   const homePage = document.querySelector(".googleHome")
+   homePage.style.display = "none"
+
+    
     const rawRandom = await fetch(`http://localhost:3000/google/random`)
     const dataRandom = await rawRandom.json()
     console.log(dataRandom);
@@ -35,6 +42,11 @@ const luckyResult = async (e) => {
 luckyBtn.addEventListener('click', luckyResult)
 
 function randomResults(dataRandom){
+   //insert google logo
+   const img = document.createElement('img')
+   img.src = "./images/googleLogo.png"
+   resultsPage.appendChild(img)
+
     const div = document.getElementById('lucky')
     div.innerHTML = ""
     const p = document.createElement('p')
@@ -49,6 +61,10 @@ function getInputValue(){
     // window.location.replace('http://localhost:3000/google/' + myInput.value)
 }
 function results(data){
+   const resultsPage = document.getElementById('resultsPage')
+   const img = document.createElement('img')
+   img.src = "./images/googleLogo.png"
+   resultsPage.appendChild(img)
     const ul = document.getElementById('ulList')
     ul.innerHTML = ""
     data.map((data) => {
@@ -56,7 +72,8 @@ function results(data){
         console.log(data.breed);
         li.textContent = data.breed
         ul.appendChild(li)
-    })}
+    }
+    )}
      
 
 

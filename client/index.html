@@ -12,30 +12,29 @@
 </head>
 <body>
     <div class="googleHome visible">
-    <div class="google">
-        <span style="color:#2f00ff"><h1>G</h1></span>
-        <span style="color: #FF0066"><h1>o</h1></span>
-        <span style="color:#FF9966"><h1>o</h1></span>
-        <span style="color:#2f00ff"><h1>g</h1></span>
-        <span style="color:#177d23"><h1>l</h1></span>
-        <span style="color:#FF0066"><h1>e</h1></span>
-    </div>
-    <form role="search" id="form" >
-    <input type="text" id="myInput">
-    <div class="buttons">
-    <button class="button" type="button" onclick="getInputValue()">Google Search</button>
-    <button class="button" id="getLuckyBtn">I'm Feeling Lucky</button>
-</form>
-    </div>
+        <div class="google">
+            <span style="color:#2f00ff"><h1>G</h1></span>
+            <span style="color: #FF0066"><h1>o</h1></span>
+            <span style="color:#FF9966"><h1>o</h1></span>
+            <span style="color:#2f00ff"><h1>g</h1></span>
+            <span style="color:#177d23"><h1>l</h1></span>
+            <span style="color:#FF0066"><h1>e</h1></span>
+        </div>
+        <form role="search" id="form" >
+        <input type="text" id="myInput">
+        <div class="buttons">
+        <button class="button" type="button" onclick="getInputValue()">Google Search</button>
+        <button class="button" id="getLuckyBtn">I'm Feeling Lucky</button>
+        </form>
+        </div>
     </div>
 
 
-    <div class="resultsPage hidden">
-    <h1>Results</h1>
+    <div id="resultsPage">
+    </div>
     <ul id="ulList" >
     
     </ul>
-    </div>
 
     <div class="luckyResult hidden" id="lucky" >
         
