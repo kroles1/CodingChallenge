@@ -15,6 +15,9 @@ const googleSearch = async (search) => {
 
    const homePage = document.querySelector(".googleHome")
    homePage.style.display = "none"
+
+   const resultsNav = document.querySelector('.resultsNav')
+   resultsNav.style.display = "inline"
     // e.preventDefault()
     // console.log(e.target.search.value);
     
